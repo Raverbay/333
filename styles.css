@@ -1544,3 +1544,9 @@ body.flip29-home main{
   visibility:visible!important;
 }
 
+
+/* FLIP&CO — MENU ANCHOR NAVIGATION */
+html{
+  scroll-padding-top:110px;
+}
+
