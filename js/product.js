@@ -37,6 +37,6 @@
  }));
  const sizesBtns=[...document.querySelectorAll('.p29-size')];
  let selected=null;
- sizesBtns.forEach(b=>b.addEventListener('click',()=>{sizesBtns.forEach(x=>x.classList.remove('selected'));b.classList.add('selected');selected=b.dataset.size;const add=document.querySelector('#p29Add');if(add){add.disabled=false;add.onclick=()=>FLIPCO.addToCart(p.id,selected);}}));
+ sizesBtns.forEach(b=>b.addEventListener('click',()=>{sizesBtns.forEach(x=>x.classList.remove('selected'));b.classList.add('selected');selected=b.dataset.size;const add=document.querySelector('#p29Add');if(add){add.disabled=false;add.onclick=()=>FLIPCO_CART.add(p.id,selected,1);}}));
  document.querySelector('#pdp')?.classList.add('flip-product-v49');
 })();

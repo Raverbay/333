@@ -1,7 +1,19 @@
-/* FLIPCO V36 — CANONICAL SITE SHELL */
-(()=>{const loader=document.createElement("div");loader.id="flipLoader";loader.innerHTML="<div class="loader-mark">FLIP&CO</div><div class="loader-line"><i></i></div><div class="loader-meta"><span>SELECTED / CAGLIARI</span><span>LOADING EDIT</span></div>";document.documentElement.classList.add("is-loading");document.addEventListener("DOMContentLoaded",()=>{document.body.prepend(loader);requestAnimationFrame(()=>loader.classList.add("ready"));window.setTimeout(()=>{loader.classList.add("done");document.documentElement.classList.remove("is-loading");window.setTimeout(()=>loader.remove(),700)},820)})})();
-const loader=document.createElement('div'); loader.id='flipLoader'; loader.innerHTML='<div class=\"loader-mark\"><img src=\"assets/logo-flipco.png?v=3\" alt=\"Flip\<div class=\"loader-mark\">FLIP&CO</div>Co\"></div><div class=\"loader-line\"><i></i></div><div class=\"loader-meta\"><span>SELECTED / CAGLIARI</span><span>LOADING EDIT</span></div>'; document.documentElement.classList.add('is-loading'); document.addEventListener('DOMContentLoaded',()=>{document.body.prepend(loader); requestAnimationFrame(()=>loader.classList.add('ready')); window.setTimeout(()=>{loader.classList.add('done'); document.documentElement.classList.remove('is-loading'); window.setTimeout(()=>loader.remove(),700)},820)});})();
+/* FLIPCO — PRELOADER */
 (()=>{
+  const loader=document.createElement("div");
+  loader.id="flipLoader";
+  loader.innerHTML='<div class="loader-mark"><img src="assets/logo-flipco.png?v=3" alt="Flip&Co"></div><div class="loader-line"><i></i></div><div class="loader-meta"><span>SELECTED / CAGLIARI</span><span>LOADING EDIT</span></div>';
+  document.documentElement.classList.add("is-loading");
+  document.addEventListener("DOMContentLoaded",()=>{
+    document.body.prepend(loader);
+    requestAnimationFrame(()=>loader.classList.add("ready"));
+    window.setTimeout(()=>{
+      loader.classList.add("done");
+      document.documentElement.classList.remove("is-loading");
+      window.setTimeout(()=>loader.remove(),700);
+    },820);
+  });
+})();
 const $=s=>document.querySelector(s), esc=FLIPCO.esc;
 const usable=p=>FLIPCO.stock(p)>0||p.available===true;
 function shell(){
