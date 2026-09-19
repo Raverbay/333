@@ -1,16 +1,43 @@
-# Flip&Co — production site
+# Flip&Co — Demo Commerce
 
-Clean production repository for the Flip&Co e-commerce experience.
+Clean demo repository for the Flip&Co fashion e-commerce experience.
 
 ## Structure
-- HTML pages: storefront, catalog, product, checkout and legal pages
-- `js/`: site shell, catalog, commerce, product and checkout logic
-- `data/products.json`: product catalog
-- `data/collections.json`: collection definitions
-- `assets/`: production imagery and product artwork
 
-## Deploy
-Static site. No build step is required. Publish the repository root with GitHub Pages or another static host.
+- `index.html` — editorial homepage
+- `shop.html` — Online Edit
+- `collections.html` / `collection.html` — collections
+- `brand.html` — brand index
+- `product.html` — product detail
+- `checkout.html` — demo order request
+- `order-confirmation.html` — confirmation
+- `faq.html`, `shipping.html`, `returns.html`, `privacy.html`, `terms.html`, `cookies.html`
+- `js/` — canonical runtime modules
+- `data/products.json` — catalog source
+- `data/collections.json` — collection source
+- `data/brands.json` — brand source
+- `data/site.json` — store metadata
+- `assets/` — local brand/product/store assets
+- `admin/` — local demo import utility
 
-## Notes
-The checkout currently collects an order request in the front-end flow; payment processing/backend order management are not included in this static repository.
+## Runtime
+
+The site is static and deployable on GitHub Pages or Netlify. Product data is loaded from `data/products.json`. No framework or build step is required.
+
+## Demo behavior
+
+Checkout is an order-request flow, not a live payment gateway. Product and editorial images may include external demo assets until replaced with the client's final photography.
+
+## Deployment
+
+Upload the contents of this repository root to the `Raverbay/22222` repository and hard-refresh the browser after deployment.
+
+## QA
+
+- JavaScript syntax checked with `node --check`
+- JSON validated
+- Local HTML references checked
+- Duplicate legacy runtime files removed
+- Header/menu layer order consolidated
+- Circular mobile menu styling removed
+- Cache versions aligned to V52.6

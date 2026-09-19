@@ -1,23 +1,17 @@
-/* Flip&Co — canonical data layer */
+/* FLIP&CO — canonical data layer */
 window.FLIPCO = window.FLIPCO || {};
+
 const FLIPCO = window.FLIPCO;
+
 FLIPCO._cache = null;
-FLIPCO.DATA = FLIPCO.DATA || { collections: [] };
 
 FLIPCO.load = async () => {
   if (FLIPCO._cache) return FLIPCO._cache;
   try {
-    const [productsResponse, collectionsResponse] = await Promise.all([
-      fetch('data/products.json?v=clean', { cache: 'no-store' }),
-      fetch('data/collections.json?v=clean', { cache: 'no-store' })
-    ]);
-    if (!productsResponse.ok) throw new Error(`Products HTTP ${productsResponse.status}`);
-    const productsData = await productsResponse.json();
-    if (collectionsResponse.ok) {
-      const collectionsData = await collectionsResponse.json();
-      FLIPCO.DATA.collections = collectionsData.collections || [];
-    }
-    FLIPCO._cache = productsData.products || [];
+    const response = await fetch('data/products.json?v=52.6', { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Products HTTP ${response.status}`);
+    const data = await response.json();
+    FLIPCO._cache = data.products || [];
     return FLIPCO._cache;
   } catch (error) {
     console.warn('Flip&Co: catalog unavailable.', error);
@@ -27,8 +21,10 @@ FLIPCO.load = async () => {
 };
 
 FLIPCO.money = value =>
-  new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR' })
-    .format(Number(value) || 0);
+  new Intl.NumberFormat('it-IT', {
+    style: 'currency',
+    currency: 'EUR'
+  }).format(Number(value) || 0);
 
 FLIPCO.stock = product =>
   Object.values(product?.stock || {}).reduce((sum, value) => sum + Number(value || 0), 0);
@@ -37,7 +33,11 @@ FLIPCO.usable = product => FLIPCO.stock(product) > 0 || product?.available === t
 
 FLIPCO.esc = value =>
   String(value ?? '').replace(/[&<>"']/g, char => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
   }[char]));
 
 FLIPCO.param = key => new URLSearchParams(window.location.search).get(key) || '';
