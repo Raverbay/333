@@ -1,3 +1,21 @@
+# V-FINAL — 2026-09-20
+
+## Client Presentation Release
+- Unified local asset cache-busting to V55.0.
+- Removed the external Unsplash dependency from the homepage hero rotation.
+- Preserved the repaired global preloader/header runtime and cart API.
+- Checkout request object now retains all submitted customer fields in the demo session.
+- Order confirmation wording changed from completed order language to request-received language.
+- Corrected remaining awkward activation wording in information pages.
+- Deployment documentation updated for `Raverbay/333`.
+
+## Go-live items still requiring client confirmation
+- Final product inventory, sizes, prices and availability.
+- Final shipping/returns/legal wording.
+- Production payment provider and order backend.
+- Final domain/canonical URL and analytics/cookie consent configuration.
+- Client-owned/licensed product/editorial photography where required.
+
 ## V38 — Hero Showcase
 - Converted the hero editorial panel into a full-bleed background gallery.
 - Added a fourth local editorial slide from the supplied Flip&Co image.
