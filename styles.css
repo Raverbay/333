@@ -1514,3 +1514,25 @@ body.flip29-home #siteFooter{
 body.flip29-home main{
   display:block!important;
 }
+
+/* FLIP&CO — LOGO PRELOADER */
+#flipLoader .loader-mark{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:min(260px,60vw);
+}
+
+#flipLoader .loader-mark img{
+  display:block;
+  width:min(190px,48vw);
+  height:auto;
+  object-fit:contain;
+  filter:none;
+}
+
+@media(max-width:640px){
+  #flipLoader .loader-mark img{
+    width:170px;
+  }
+}
