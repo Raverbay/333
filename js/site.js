@@ -55,7 +55,6 @@ $('#cartTotal').textContent=FLIPCO.money(FLIPCO_CART.total(ps));document.querySe
 cartRefresh();document.addEventListener('cart:change',cartRefresh);
 const header=$('.header');let lastY=window.scrollY,ticking=false;const update=()=>{const y=window.scrollY;header.classList.toggle('scrolled',y>24);body.classList.toggle('nav-hidden',y>120&&y>lastY);body.classList.toggle('nav-show',y<=120||y<lastY);lastY=y;ticking=false};window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});update();
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute('href');const el=id&&document.querySelector(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'',id)}});
-})();
 
 /* FLIP&CO — DISCOVER MENU ANCHORS */
 document.addEventListener('click',function(e){
@@ -69,8 +68,6 @@ document.addEventListener('click',function(e){
   if(target){
     e.preventDefault();
 
-    if(typeof closePanels==='function') closePanels();
-
     setTimeout(()=>{
       target.scrollIntoView({
         behavior:'smooth',
@@ -80,4 +77,3 @@ document.addEventListener('click',function(e){
     },120);
   }
 });
-
