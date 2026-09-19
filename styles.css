@@ -1536,3 +1536,11 @@ body.flip29-home main{
     width:170px;
   }
 }
+
+/* FLIP&CO — PRELOADER LOGO VISIBILITY */
+#flipLoader .loader-mark img{
+  filter:brightness(0) invert(1)!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
